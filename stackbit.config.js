@@ -1,6 +1,9 @@
 import { ContentfulContentSource } from '@stackbit/cms-contentful'
 
 export default {
+  stackbitVersion: '~0.6.0',
+  ssgName: 'nextjs',
+  nodeVersion: '16',
   contentSources: [
     new ContentfulContentSource({
       spaceId: process.env.CONTENTFUL_SPACE_ID,
@@ -9,7 +12,7 @@ export default {
       accessToken: process.env.CONTENTFUL_MANAGEMENT_TOKEN,
     }),
   ],
-  modelExtensions: {
-    // page definitions, field extensions, etc ...
+  models: {
+    page: { type: 'page', urlPath: 'https://pgnearkite.netlify.app/' },
   },
 }
